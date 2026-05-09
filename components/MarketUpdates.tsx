@@ -133,7 +133,7 @@ export default function MarketUpdates() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
                 <YAxis tickFormatter={priceFmt} tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} width={48} />
-                <Tooltip formatter={(v: number) => [`$${(v * 1000).toLocaleString()}`, "Median Price"]} labelStyle={{ color: "#0f2240", fontWeight: 600 }} contentStyle={{ border: "none", borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} />
+                <Tooltip formatter={(v) => [`$${(Number(v) * 1000).toLocaleString()}`, "Median Price"]} labelStyle={{ color: "#0f2240", fontWeight: 600 }} contentStyle={{ border: "none", borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} />
                 <Line type="monotone" dataKey="price" stroke="#e07b39" strokeWidth={2.5} dot={false} activeDot={{ r: 5, fill: "#e07b39" }} />
               </LineChart>
             </ResponsiveContainer>
@@ -148,7 +148,7 @@ export default function MarketUpdates() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
                 <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} width={32} />
-                <Tooltip formatter={(v: number) => [v, "Sales"]} labelStyle={{ color: "#0f2240", fontWeight: 600 }} contentStyle={{ border: "none", borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} />
+                <Tooltip formatter={(v) => [v, "Sales"]} labelStyle={{ color: "#0f2240", fontWeight: 600 }} contentStyle={{ border: "none", borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} />
                 <Bar dataKey="sales" fill="#0f2240" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
