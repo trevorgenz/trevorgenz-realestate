@@ -6,53 +6,54 @@ import {
 } from "recharts";
 import { ExternalLink, TrendingUp, TrendingDown, Minus } from "lucide-react";
 
+// Data from Beacon Appraisal Group — May 2026 report (May 2025 – April 2026)
 const bendData = {
   priceHistory: [
-    { month: "Jun", price: 685 }, { month: "Jul", price: 692 },
-    { month: "Aug", price: 698 }, { month: "Sep", price: 701 },
-    { month: "Oct", price: 695 }, { month: "Nov", price: 688 },
-    { month: "Dec", price: 683 }, { month: "Jan", price: 690 },
-    { month: "Feb", price: 706 }, { month: "Mar", price: 718 },
-    { month: "Apr", price: 722 }, { month: "May", price: 725 },
+    { month: "May", price: 700 }, { month: "Jun", price: 700 },
+    { month: "Jul", price: 700 }, { month: "Aug", price: 693 },
+    { month: "Sep", price: 713 }, { month: "Oct", price: 698 },
+    { month: "Nov", price: 686 }, { month: "Dec", price: 688 },
+    { month: "Jan", price: 699 }, { month: "Feb", price: 682 },
+    { month: "Mar", price: 680 }, { month: "Apr", price: 669 },
   ],
   salesVolume: [
-    { month: "Jun", sales: 124 }, { month: "Jul", sales: 138 },
-    { month: "Aug", sales: 142 }, { month: "Sep", sales: 119 },
-    { month: "Oct", sales: 98 }, { month: "Nov", sales: 87 },
-    { month: "Dec", sales: 72 }, { month: "Jan", sales: 81 },
-    { month: "Feb", sales: 93 }, { month: "Mar", sales: 108 },
-    { month: "Apr", sales: 121 }, { month: "May", sales: 130 },
+    { month: "May", sales: 122 }, { month: "Jun", sales: 122 },
+    { month: "Jul", sales: 118 }, { month: "Aug", sales: 114 },
+    { month: "Sep", sales: 114 }, { month: "Oct", sales: 111 },
+    { month: "Nov", sales: 106 }, { month: "Dec", sales: 105 },
+    { month: "Jan", sales: 94 }, { month: "Feb", sales: 90 },
+    { month: "Mar", sales: 89 }, { month: "Apr", sales: 89 },
   ],
   stats: [
-    { label: "Median Sale Price", value: "$725,000", change: "+3.6%", up: true },
-    { label: "Months of Supply", value: "3.2 mo", change: "+0.4 mo", up: false },
-    { label: "Avg Days on Market", value: "28 days", change: "-4 days", up: true },
-    { label: "List-to-Sale Ratio", value: "98.2%", change: "+0.5%", up: true },
+    { label: "Median Sale Price", value: "$669,000", change: "-6.3% vs Apr '25", up: false },
+    { label: "Months of Supply", value: "3 months", change: "Balanced market", up: null },
+    { label: "Annual Sales Vol.", value: "1,770 homes", change: "~147 sales/mo avg", up: null },
+    { label: "Active Listings", value: "470 homes", change: "3 mo inventory", up: null },
   ],
 };
 
 const redmondData = {
   priceHistory: [
-    { month: "Jun", price: 462 }, { month: "Jul", price: 468 },
-    { month: "Aug", price: 471 }, { month: "Sep", price: 475 },
-    { month: "Oct", price: 470 }, { month: "Nov", price: 463 },
-    { month: "Dec", price: 458 }, { month: "Jan", price: 464 },
-    { month: "Feb", price: 472 }, { month: "Mar", price: 485 },
-    { month: "Apr", price: 492 }, { month: "May", price: 499 },
+    { month: "May", price: 495 }, { month: "Jun", price: 493 },
+    { month: "Jul", price: 500 }, { month: "Aug", price: 491 },
+    { month: "Sep", price: 498 }, { month: "Oct", price: 500 },
+    { month: "Nov", price: 497 }, { month: "Dec", price: 483 },
+    { month: "Jan", price: 472 }, { month: "Feb", price: 473 },
+    { month: "Mar", price: 469 }, { month: "Apr", price: 460 },
   ],
   salesVolume: [
-    { month: "Jun", sales: 58 }, { month: "Jul", sales: 64 },
-    { month: "Aug", sales: 67 }, { month: "Sep", sales: 54 },
-    { month: "Oct", sales: 46 }, { month: "Nov", sales: 39 },
-    { month: "Dec", sales: 31 }, { month: "Jan", sales: 37 },
-    { month: "Feb", sales: 44 }, { month: "Mar", sales: 51 },
-    { month: "Apr", sales: 57 }, { month: "May", sales: 62 },
+    { month: "May", sales: 34 }, { month: "Jun", sales: 37 },
+    { month: "Jul", sales: 38 }, { month: "Aug", sales: 41 },
+    { month: "Sep", sales: 46 }, { month: "Oct", sales: 46 },
+    { month: "Nov", sales: 47 }, { month: "Dec", sales: 47 },
+    { month: "Jan", sales: 51 }, { month: "Feb", sales: 50 },
+    { month: "Mar", sales: 57 }, { month: "Apr", sales: 60 },
   ],
   stats: [
-    { label: "Median Sale Price", value: "$499,500", change: "+0.4%", up: true },
-    { label: "Months of Supply", value: "2.8 mo", change: "-0.1 mo", up: true },
-    { label: "Avg Days on Market", value: "22 days", change: "-2 days", up: true },
-    { label: "List-to-Sale Ratio", value: "99.1%", change: "+0.8%", up: true },
+    { label: "Median Sale Price", value: "$460,000", change: "-7.8% vs Apr '25", up: false },
+    { label: "Months of Supply", value: "3 months", change: "Balanced market", up: null },
+    { label: "Annual Sales Vol.", value: "583 homes", change: "~49 sales/mo avg", up: null },
+    { label: "Active Listings", value: "150 homes", change: "3 mo inventory", up: null },
   ],
 };
 
@@ -156,7 +157,7 @@ export default function MarketUpdates() {
         </div>
 
         <p className="text-xs text-gray-400 mt-6 text-center">
-          Data sourced from Beacon Appraisers monthly report — Deschutes County SFR sales. Updated each month when new report is published.
+          Data sourced from Beacon Appraisers May 2026 report — Deschutes County SFR, May 2025–April 2026. Updated each month when new report is published.
         </p>
       </div>
     </section>
