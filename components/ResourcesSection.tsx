@@ -10,7 +10,7 @@ const resources = [
       "Browse available commercial properties, retail, office, and industrial spaces across Central Oregon on LoopNet.",
     cta: "Search LoopNet",
     href: "https://www.loopnet.com/search/commercial-real-estate/bend-or/for-sale/",
-    accent: "#0f2240",
+    accent: "#0f172a",
   },
   {
     id: "zoning",
@@ -38,13 +38,13 @@ const resources = [
 
 export default function ResourcesSection() {
   return (
-    <section className="bg-[#faf8f5] py-20 px-6">
+    <section className="bg-[#f1f5f9] py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12">
           <p className="text-[#e07b39] text-sm font-semibold tracking-widest uppercase mb-2">
             Local Resources
           </p>
-          <h2 className="text-4xl font-bold text-[#0f2240]">Everything You Need</h2>
+          <h2 className="text-4xl font-bold text-[#0f172a]">Everything You Need</h2>
           <p className="text-gray-500 mt-2">Commercial listings, zoning info, and trusted local professionals</p>
         </div>
 
@@ -66,7 +66,7 @@ export default function ResourcesSection() {
                 <p className="text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: r.accent }}>
                   {r.label}
                 </p>
-                <h3 className="text-[#0f2240] font-bold text-xl mb-3">{r.title}</h3>
+                <h3 className="text-[#0f172a] font-bold text-xl mb-3">{r.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-6">{r.description}</p>
                 <a
                   href={r.href}

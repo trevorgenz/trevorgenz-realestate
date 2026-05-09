@@ -19,10 +19,10 @@ const rentData = [
 
 export default function RentData() {
   return (
-    <section id="rent" className="bg-[#0f2240] py-20 px-6">
+    <section id="rent" className="bg-[#0f172a] py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10">
-          <p className="text-[#e07b39] text-sm font-semibold tracking-widest uppercase mb-2">
+          <p className="text-[#3b82f6] text-sm font-semibold tracking-widest uppercase mb-2">
             Rental Market
           </p>
           <h2 className="text-4xl font-bold text-white">Average Rent Trends</h2>
@@ -33,8 +33,8 @@ export default function RentData() {
           {rentData.map((market) => (
             <div key={market.city} className="bg-white/5 border border-white/10 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-[#e07b39]/20 flex items-center justify-center">
-                  <Home size={18} className="text-[#e07b39]" />
+                <div className="w-10 h-10 rounded-lg bg-[#3b82f6]/20 flex items-center justify-center">
+                  <Home size={18} className="text-[#3b82f6]" />
                 </div>
                 <h3 className="text-white font-bold text-xl">{market.city}, Oregon</h3>
               </div>

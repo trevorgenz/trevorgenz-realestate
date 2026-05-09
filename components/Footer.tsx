@@ -11,12 +11,12 @@ const nav = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1a30] text-white/60 py-14 px-6">
+    <footer className="bg-[#050b15] text-white/60 py-14 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
             <p className="text-white font-bold text-lg mb-1">Trevor Genz</p>
-            <p className="text-[#e07b39] text-xs font-semibold tracking-widest uppercase mb-4">Central Oregon Real Estate</p>
+            <p className="text-[#3b82f6] text-xs font-semibold tracking-widest uppercase mb-4">Central Oregon Real Estate</p>
             <p className="text-sm leading-relaxed">
               Helping buyers and sellers navigate the Bend and Redmond market with honest data and local expertise.
             </p>
@@ -27,7 +27,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2">
               {nav.map((n) => (
                 <li key={n.href}>
-                  <a href={n.href} className="text-sm hover:text-[#e07b39] transition-colors">{n.label}</a>
+                  <a href={n.href} className="text-sm hover:text-[#3b82f6] transition-colors">{n.label}</a>
                 </li>
               ))}
             </ul>
@@ -36,10 +36,10 @@ export default function Footer() {
           <div>
             <p className="text-white font-semibold text-sm mb-4">Contact</p>
             <div className="flex flex-col gap-3 text-sm">
-              <a href="tel:5412797522" className="flex items-center gap-2 hover:text-[#e07b39] transition-colors">
+              <a href="tel:5412797522" className="flex items-center gap-2 hover:text-[#3b82f6] transition-colors">
                 <Phone size={14} /> (541) 279-7522
               </a>
-              <a href="mailto:trevorgenz@gmail.com" className="flex items-center gap-2 hover:text-[#e07b39] transition-colors">
+              <a href="mailto:trevorgenz@gmail.com" className="flex items-center gap-2 hover:text-[#3b82f6] transition-colors">
                 <Mail size={14} /> trevorgenz@gmail.com
               </a>
               <span className="flex items-center gap-2">

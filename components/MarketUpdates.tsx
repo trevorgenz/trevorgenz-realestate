@@ -64,7 +64,7 @@ function StatCard({ label, value, change, up }: { label: string; value: string; 
   return (
     <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
       <p className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-2">{label}</p>
-      <p className="text-[#0f2240] text-2xl font-bold mb-1">{value}</p>
+      <p className="text-[#0f172a] text-2xl font-bold mb-1">{value}</p>
       <p className={`text-xs font-semibold flex items-center gap-1 ${color}`}>
         <Icon size={12} /> {change} vs. last year
       </p>
@@ -82,17 +82,17 @@ export default function MarketUpdates() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <p className="text-[#e07b39] text-sm font-semibold tracking-widest uppercase mb-2">
+            <p className="text-[#3b82f6] text-sm font-semibold tracking-widest uppercase mb-2">
               Beacon Report Data
             </p>
-            <h2 className="text-4xl font-bold text-[#0f2240]">Market Updates</h2>
+            <h2 className="text-4xl font-bold text-[#0f172a]">Market Updates</h2>
             <p className="text-gray-500 mt-2">Central Oregon housing market — updated monthly</p>
           </div>
           <a
             href="https://beaconappraisers.com/market-overviews/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#e07b39] transition-colors"
+            className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#3b82f6] transition-colors"
           >
             Source: Beacon Appraisers <ExternalLink size={13} />
           </a>
@@ -106,7 +106,7 @@ export default function MarketUpdates() {
               onClick={() => setCity(c)}
               className={`px-8 py-3 text-sm font-semibold capitalize transition-all ${
                 city === c
-                  ? "border-b-[3px] border-[#e07b39] text-[#0f2240]"
+                  ? "border-b-[3px] border-[#3b82f6] text-[#0f172a]"
                   : "border-b-[3px] border-transparent text-gray-400 hover:text-gray-600"
               }`}
             >
@@ -125,31 +125,31 @@ export default function MarketUpdates() {
         {/* Charts row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Price trend */}
-          <div className="bg-[#faf8f5] rounded-2xl p-6 border border-gray-100">
-            <h3 className="text-[#0f2240] font-bold text-base mb-1">Median Sale Price</h3>
+          <div className="bg-[#f1f5f9] rounded-2xl p-6 border border-gray-100">
+            <h3 className="text-[#0f172a] font-bold text-base mb-1">Median Sale Price</h3>
             <p className="text-gray-400 text-xs mb-5">12-month trend (in thousands)</p>
             <ResponsiveContainer width="100%" height={220}>
               <LineChart data={data.priceHistory} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
                 <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
                 <YAxis tickFormatter={priceFmt} tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} width={48} />
-                <Tooltip formatter={(v) => [`$${(Number(v) * 1000).toLocaleString()}`, "Median Price"]} labelStyle={{ color: "#0f2240", fontWeight: 600 }} contentStyle={{ border: "none", borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} />
-                <Line type="monotone" dataKey="price" stroke="#e07b39" strokeWidth={2.5} dot={false} activeDot={{ r: 5, fill: "#e07b39" }} />
+                <Tooltip formatter={(v) => [`$${(Number(v) * 1000).toLocaleString()}`, "Median Price"]} labelStyle={{ color: "#0f172a", fontWeight: 600 }} contentStyle={{ border: "none", borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} />
+                <Line type="monotone" dataKey="price" stroke="#3b82f6" strokeWidth={2.5} dot={false} activeDot={{ r: 5, fill: "#3b82f6" }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
 
           {/* Sales volume */}
-          <div className="bg-[#faf8f5] rounded-2xl p-6 border border-gray-100">
-            <h3 className="text-[#0f2240] font-bold text-base mb-1">Sales Volume</h3>
+          <div className="bg-[#f1f5f9] rounded-2xl p-6 border border-gray-100">
+            <h3 className="text-[#0f172a] font-bold text-base mb-1">Sales Volume</h3>
             <p className="text-gray-400 text-xs mb-5">Closed transactions per month</p>
             <ResponsiveContainer width="100%" height={220}>
               <BarChart data={data.salesVolume} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
                 <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
                 <YAxis tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} width={32} />
-                <Tooltip formatter={(v) => [v, "Sales"]} labelStyle={{ color: "#0f2240", fontWeight: 600 }} contentStyle={{ border: "none", borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} />
-                <Bar dataKey="sales" fill="#0f2240" radius={[4, 4, 0, 0]} />
+                <Tooltip formatter={(v) => [v, "Sales"]} labelStyle={{ color: "#0f172a", fontWeight: 600 }} contentStyle={{ border: "none", borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }} />
+                <Bar dataKey="sales" fill="#0f172a" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>

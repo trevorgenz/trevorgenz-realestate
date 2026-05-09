@@ -3,19 +3,19 @@ import { Phone, Mail, ChevronDown } from "lucide-react";
 
 const slides = [
   {
-    bg: "linear-gradient(135deg, #1a3a5c 0%, #2d6a9f 50%, #1a3a5c 100%)",
+    bg: "linear-gradient(135deg, #0a0f1e 0%, #0f2d5c 50%, #0a0f1e 100%)",
     label: "Bend, Oregon",
   },
   {
-    bg: "linear-gradient(135deg, #1e4d2b 0%, #2e7d3f 50%, #1e4d2b 100%)",
+    bg: "linear-gradient(135deg, #050b15 0%, #1a3a7a 50%, #050b15 100%)",
     label: "Cascade Mountains",
   },
   {
-    bg: "linear-gradient(135deg, #5c3d1a 0%, #8b6914 50%, #5c3d1a 100%)",
+    bg: "linear-gradient(135deg, #0a0f1e 0%, #1e4d8c 40%, #0d1f3c 100%)",
     label: "High Desert Living",
   },
   {
-    bg: "linear-gradient(135deg, #3d1a5c 0%, #6b2d9f 40%, #1a3a5c 100%)",
+    bg: "linear-gradient(135deg, #050b15 0%, #0f2d5c 50%, #1a3a7a 100%)",
     label: "Redmond, Oregon",
   },
 ];
@@ -37,7 +37,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-6">
-        <p className="text-[#e07b39] text-sm font-semibold tracking-widest uppercase mb-4">
+        <p className="text-[#3b82f6] text-sm font-semibold tracking-widest uppercase mb-4">
           Central Oregon Real Estate
         </p>
         <h1 className="text-white text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-6">
@@ -51,7 +51,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#listings"
-            className="bg-[#e07b39] hover:bg-[#f5a06a] text-white font-semibold px-8 py-4 rounded-lg transition-all hover:-translate-y-0.5 text-base"
+            className="bg-[#3b82f6] hover:bg-[#f5a06a] text-white font-semibold px-8 py-4 rounded-lg transition-all hover:-translate-y-0.5 text-base"
           >
             View New Listings
           </a>
@@ -64,10 +64,10 @@ export default function HeroSection() {
         </div>
 
         <div className="flex gap-6 mt-10 text-white/70 text-sm">
-          <a href="tel:5412797522" className="flex items-center gap-2 hover:text-[#e07b39] transition-colors">
+          <a href="tel:5412797522" className="flex items-center gap-2 hover:text-[#3b82f6] transition-colors">
             <Phone size={14} /> (541) 279-7522
           </a>
-          <a href="mailto:trevorgenz@gmail.com" className="flex items-center gap-2 hover:text-[#e07b39] transition-colors">
+          <a href="mailto:trevorgenz@gmail.com" className="flex items-center gap-2 hover:text-[#3b82f6] transition-colors">
             <Mail size={14} /> trevorgenz@gmail.com
           </a>
         </div>

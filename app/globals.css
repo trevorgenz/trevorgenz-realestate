@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #0f2240;
-  --orange: #e07b39;
-  --orange-light: #f5a06a;
-  --cream: #faf8f5;
-  --charcoal: #2d3748;
+  --navy: #0f172a;
+  --blue: #3b82f6;
+  --blue-light: #60a5fa;
+  --blue-bright: #1d4ed8;
+  --cream: #f1f5f9;
+  --charcoal: #1e293b;
+  --dark: #0a0f1e;
 }
 
 html { scroll-behavior: smooth; }

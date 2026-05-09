@@ -6,16 +6,16 @@ export default function AgentSection() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Headshot placeholder — replace src with real photo */}
         <div className="flex-shrink-0">
-          <div className="w-52 h-52 rounded-2xl bg-gradient-to-br from-[#0f2240] to-[#2d6a9f] flex items-center justify-center text-white text-5xl font-bold shadow-xl">
+          <div className="w-52 h-52 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#2d6a9f] flex items-center justify-center text-white text-5xl font-bold shadow-xl">
             TG
           </div>
         </div>
 
         <div className="flex-1">
-          <p className="text-[#e07b39] text-sm font-semibold tracking-widest uppercase mb-2">
+          <p className="text-[#3b82f6] text-sm font-semibold tracking-widest uppercase mb-2">
             Your Agent
           </p>
-          <h2 className="text-4xl font-bold text-[#0f2240] mb-1">Trevor Genz</h2>
+          <h2 className="text-4xl font-bold text-[#0f172a] mb-1">Trevor Genz</h2>
           <p className="text-gray-500 text-sm mb-4 flex items-center gap-1">
             <MapPin size={13} /> Central Oregon — Bend &amp; Redmond
           </p>
@@ -29,13 +29,13 @@ export default function AgentSection() {
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href="tel:5412797522"
-              className="flex items-center gap-2 bg-[#0f2240] hover:bg-[#1a3a5c] text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+              className="flex items-center gap-2 bg-[#0f172a] hover:bg-[#1a3a5c] text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
               <Phone size={15} /> (541) 279-7522
             </a>
             <a
               href="mailto:trevorgenz@gmail.com"
-              className="flex items-center gap-2 border-2 border-[#0f2240] text-[#0f2240] hover:bg-[#0f2240] hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+              className="flex items-center gap-2 border-2 border-[#0f172a] text-[#0f172a] hover:bg-[#0f172a] hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
               <Mail size={15} /> trevorgenz@gmail.com
             </a>
