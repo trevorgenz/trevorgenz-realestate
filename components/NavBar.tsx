@@ -26,13 +26,7 @@ export default function NavBar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bg}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="#hero" className="flex items-center gap-2 text-white font-bold text-lg tracking-tight">
-          <span className="flex items-end gap-[2px] bg-[#3b82f6] rounded-full w-8 h-8 justify-center pb-[6px]">
-            <span className="w-[3px] h-2 bg-white rounded-sm"></span>
-            <span className="w-[3px] h-3 bg-white rounded-sm"></span>
-            <span className="w-[3px] h-4 bg-white rounded-sm"></span>
-            <span className="w-[3px] h-[22px] bg-white rounded-sm"></span>
-          </span>
+        <a href="#hero" className="text-white font-bold text-lg tracking-tight">
           Trevor Genz <span className="text-[#3b82f6]">Real Estate</span>
         </a>
 
