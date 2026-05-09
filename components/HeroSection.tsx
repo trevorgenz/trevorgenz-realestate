@@ -7,15 +7,15 @@ const Q = "?w=1920&q=85&fit=crop&auto=format";
 
 const slides = [
   { id: "1585418515278-4d2246f56a28", label: "Smith Rock State Park" },
-  { id: "1585508868313-c82e6a34dbca", label: "Smith Rock State Park" },
-  { id: "1573111651542-961c4080bc18", label: "Smith Rock" },
-  { id: "1528672903139-6a4496639a68", label: "Smith Rock" },
-  { id: "1659627407688-13ff63c55940", label: "Smith Rock — Crooked River" },
-  { id: "1687451223552-c7afa980bdad", label: "Mt. Bachelor" },
-  { id: "1727556828582-9e7529877064", label: "Mt. Bachelor" },
-  { id: "1542425967-a2dd69fefbb9",   label: "Bend, Oregon" },
-  { id: "1626827318571-483bf9df4d64", label: "Bend, Oregon" },
-  { id: "1599015344479-d4cf34754444", label: "Central Oregon" },
+  { id: "1528672903139-6a4496639a68", label: "Smith Rock State Park" },
+  { id: "1582332872732-d3784c63d448", label: "Mt. Bachelor" },
+  { id: "1563328234-3b7d345fbe05",    label: "Mt. Bachelor" },
+  { id: "1718927445954-b050d18bc135", label: "Three Sisters Wilderness" },
+  { id: "1568666062525-111347cc88e4", label: "Three Sisters Wilderness" },
+  { id: "1638176818276-a4e90c753da6", label: "Cascade Mountains" },
+  { id: "1720999748915-ac0bfdbab7d5", label: "Bend — Old Mill District" },
+  { id: "1686903430763-ce58bce57eac", label: "Bend, Oregon" },
+  { id: "1680693315986-227af5667594", label: "Redmond, Oregon" },
 ].map((s) => ({ ...s, url: `${BASE}${s.id}${Q}` }));
 
 export default function HeroSection() {
