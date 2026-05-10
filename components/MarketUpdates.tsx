@@ -2,7 +2,7 @@
 import { useState } from "react";
 import {
   LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  Tooltip, ResponsiveContainer, Legend,
+  Tooltip, ResponsiveContainer, Legend, ReferenceLine,
 } from "recharts";
 import { ExternalLink, TrendingUp, TrendingDown, Minus } from "lucide-react";
 
@@ -23,6 +23,14 @@ const bendData = {
     { month: "Nov", sales: 53 }, { month: "Dec", sales: 53 },
     { month: "Jan", sales: 56 }, { month: "Feb", sales: 62 },
     { month: "Mar", sales: 66 }, { month: "Apr", sales: 66 },
+  ],
+  monthsSupply: [
+    { month: "May", mos: 3.5 }, { month: "Jun", mos: 4.0 },
+    { month: "Jul", mos: 4.0 }, { month: "Aug", mos: 3.5 },
+    { month: "Sep", mos: 3.5 }, { month: "Oct", mos: 3.0 },
+    { month: "Nov", mos: 3.0 }, { month: "Dec", mos: 3.0 },
+    { month: "Jan", mos: 3.0 }, { month: "Feb", mos: 3.0 },
+    { month: "Mar", mos: 3.0 }, { month: "Apr", mos: 3.0 },
   ],
   stats: [
     { label: "Median Sale Price", value: "$669,000", change: "-6.3% vs Apr '25", up: false },
@@ -49,6 +57,14 @@ const redmondData = {
     { month: "Jan", sales: 51 }, { month: "Feb", sales: 50 },
     { month: "Mar", sales: 57 }, { month: "Apr", sales: 60 },
   ],
+  monthsSupply: [
+    { month: "May", mos: 3.5 }, { month: "Jun", mos: 3.5 },
+    { month: "Jul", mos: 3.5 }, { month: "Aug", mos: 3.0 },
+    { month: "Sep", mos: 3.0 }, { month: "Oct", mos: 3.0 },
+    { month: "Nov", mos: 3.0 }, { month: "Dec", mos: 3.0 },
+    { month: "Jan", mos: 3.0 }, { month: "Feb", mos: 3.0 },
+    { month: "Mar", mos: 3.0 }, { month: "Apr", mos: 3.0 },
+  ],
   stats: [
     { label: "Median Sale Price", value: "$460,000", change: "-7.8% vs Apr '25", up: false },
     { label: "Months of Supply", value: "3 months", change: "Balanced market", up: null },
@@ -67,11 +83,17 @@ function StatCard({ label, value, change, up }: { label: string; value: string; 
       <p className="text-gray-500 text-xs font-medium uppercase tracking-wide mb-2">{label}</p>
       <p className="text-[#0f172a] text-2xl font-bold mb-1">{value}</p>
       <p className={`text-xs font-semibold flex items-center gap-1 ${color}`}>
-        <Icon size={12} /> {change} vs. last year
+        <Icon size={12} /> {change}
       </p>
     </div>
   );
 }
+
+const mosZoneLabel = (mos: number) => {
+  if (mos < 3) return "Seller's Market";
+  if (mos <= 6) return "Balanced Market";
+  return "Buyer's Market";
+};
 
 export default function MarketUpdates() {
   const [city, setCity] = useState<"bend" | "redmond">("bend");
@@ -124,7 +146,7 @@ export default function MarketUpdates() {
         </div>
 
         {/* Charts row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           {/* Price trend */}
           <div className="bg-[#f1f5f9] rounded-2xl p-6 border border-gray-100">
             <h3 className="text-[#0f172a] font-bold text-base mb-1">Median Sale Price</h3>
@@ -154,6 +176,48 @@ export default function MarketUpdates() {
               </BarChart>
             </ResponsiveContainer>
           </div>
+        </div>
+
+        {/* Months of Supply chart — full width */}
+        <div className="bg-[#f1f5f9] rounded-2xl p-6 border border-gray-100">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-5">
+            <div>
+              <h3 className="text-[#0f172a] font-bold text-base mb-1">Months of Supply</h3>
+              <p className="text-gray-400 text-xs">Active listings ÷ monthly sales rate · under 3 = seller's market · 3–6 = balanced · over 6 = buyer's market</p>
+            </div>
+            <span className={`text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap ${
+              data.monthsSupply[data.monthsSupply.length - 1].mos < 3
+                ? "bg-orange-100 text-orange-600"
+                : data.monthsSupply[data.monthsSupply.length - 1].mos <= 6
+                ? "bg-emerald-100 text-emerald-600"
+                : "bg-blue-100 text-blue-600"
+            }`}>
+              {mosZoneLabel(data.monthsSupply[data.monthsSupply.length - 1].mos)}
+            </span>
+          </div>
+          <ResponsiveContainer width="100%" height={220}>
+            <LineChart data={data.monthsSupply} margin={{ top: 4, right: 16, bottom: 0, left: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+              <XAxis dataKey="month" tick={{ fontSize: 11, fill: "#9ca3af" }} axisLine={false} tickLine={false} />
+              <YAxis
+                domain={[0, 7]}
+                ticks={[0, 1, 2, 3, 4, 5, 6, 7]}
+                tickFormatter={(v) => `${v}mo`}
+                tick={{ fontSize: 11, fill: "#9ca3af" }}
+                axisLine={false}
+                tickLine={false}
+                width={40}
+              />
+              <Tooltip
+                formatter={(v) => [`${Number(v).toFixed(1)} months`, "Supply"]}
+                labelStyle={{ color: "#0f172a", fontWeight: 600 }}
+                contentStyle={{ border: "none", borderRadius: 8, boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }}
+              />
+              <ReferenceLine y={3} stroke="#10b981" strokeDasharray="4 3" strokeWidth={1.5} label={{ value: "Balanced (3mo)", position: "insideTopRight", fontSize: 10, fill: "#10b981" }} />
+              <ReferenceLine y={6} stroke="#3b82f6" strokeDasharray="4 3" strokeWidth={1.5} label={{ value: "Buyer's Market (6mo)", position: "insideTopRight", fontSize: 10, fill: "#3b82f6" }} />
+              <Line type="monotone" dataKey="mos" stroke="#f59e0b" strokeWidth={2.5} dot={{ r: 4, fill: "#f59e0b", strokeWidth: 0 }} activeDot={{ r: 6 }} />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
 
         <p className="text-xs text-gray-400 mt-6 text-center">
