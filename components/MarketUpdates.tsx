@@ -17,12 +17,12 @@ const bendData = {
     { month: "Mar", price: 680 }, { month: "Apr", price: 669 },
   ],
   salesVolume: [
-    { month: "May", sales: 122 }, { month: "Jun", sales: 122 },
-    { month: "Jul", sales: 118 }, { month: "Aug", sales: 114 },
-    { month: "Sep", sales: 114 }, { month: "Oct", sales: 111 },
-    { month: "Nov", sales: 106 }, { month: "Dec", sales: 105 },
-    { month: "Jan", sales: 94 }, { month: "Feb", sales: 90 },
-    { month: "Mar", sales: 89 }, { month: "Apr", sales: 89 },
+    { month: "May", sales: 45 }, { month: "Jun", sales: 45 },
+    { month: "Jul", sales: 45 }, { month: "Aug", sales: 44 },
+    { month: "Sep", sales: 43 }, { month: "Oct", sales: 51 },
+    { month: "Nov", sales: 53 }, { month: "Dec", sales: 53 },
+    { month: "Jan", sales: 56 }, { month: "Feb", sales: 62 },
+    { month: "Mar", sales: 66 }, { month: "Apr", sales: 66 },
   ],
   stats: [
     { label: "Median Sale Price", value: "$669,000", change: "-6.3% vs Apr '25", up: false },
