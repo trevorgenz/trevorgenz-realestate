@@ -6,6 +6,7 @@ const links = [
   { label: "Listings", href: "#listings" },
   { label: "Market Data", href: "#market" },
   { label: "Rent Trends", href: "#rent" },
+  { label: "Rates", href: "#rates" },
   { label: "Home Value", href: "#home-value" },
   { label: "Commercial", href: "#commercial" },
   { label: "Zoning", href: "#zoning" },

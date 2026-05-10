@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AgentSection from "@/components/AgentSection";
 import ListingsSection from "@/components/ListingsSection";
 import MarketUpdates from "@/components/MarketUpdates";
+import MortgageRates from "@/components/MortgageRates";
 import HomeValueSection from "@/components/HomeValueSection";
 import RentData from "@/components/RentData";
 import ResourcesSection from "@/components/ResourcesSection";
@@ -16,6 +17,7 @@ export default function Home() {
       <AgentSection />
       <ListingsSection />
       <MarketUpdates />
+      <MortgageRates />
       <HomeValueSection />
       <RentData />
       <ResourcesSection />
