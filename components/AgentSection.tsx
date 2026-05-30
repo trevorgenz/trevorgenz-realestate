@@ -4,11 +4,12 @@ export default function AgentSection() {
   return (
     <section className="bg-white py-20 px-6">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-        {/* Headshot placeholder — replace src with real photo */}
         <div className="flex-shrink-0">
-          <div className="w-52 h-52 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#2d6a9f] flex items-center justify-center text-white text-5xl font-bold shadow-xl">
-            TG
-          </div>
+          <img
+            src="/trevor-headshot.jpg"
+            alt="Trevor Genz — Central Oregon Real Estate Agent"
+            className="w-52 h-60 object-cover object-top rounded-2xl shadow-xl"
+          />
         </div>
 
         <div className="flex-1">
