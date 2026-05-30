@@ -1,9 +1,9 @@
 import { ExternalLink } from "lucide-react";
 
 const BEND_URL =
-  "https://www.zillow.com/homes/for_sale/Bend-OR_rb/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22filterState%22%3A%7B%22price%22%3A%7B%22max%22%3A600000%7D%2C%22mp%22%3A%7B%22max%22%3A3000%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%7D%7D";
+  "https://www.zillow.com/homes/for_sale/Bend-OR_rb/?searchQueryState=%7B%22usersSearchTerm%22%3A%22Bend%2C%20OR%22%2C%22mapBounds%22%3A%7B%22west%22%3A-121.64%2C%22east%22%3A-120.99%2C%22south%22%3A43.96%2C%22north%22%3A44.16%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22price%22%3A%7B%22max%22%3A600000%7D%2C%22mp%22%3A%7B%22max%22%3A3000%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%7D";
 const REDMOND_URL =
-  "https://www.zillow.com/homes/for_sale/Redmond-OR_rb/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22filterState%22%3A%7B%22price%22%3A%7B%22max%22%3A600000%7D%2C%22mp%22%3A%7B%22max%22%3A3000%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%7D%7D";
+  "https://www.zillow.com/homes/for_sale/Redmond-OR_rb/?searchQueryState=%7B%22usersSearchTerm%22%3A%22Redmond%2C%20OR%22%2C%22mapBounds%22%3A%7B%22west%22%3A-121.28%2C%22east%22%3A-120.97%2C%22south%22%3A44.22%2C%22north%22%3A44.36%7D%2C%22isMapVisible%22%3Atrue%2C%22filterState%22%3A%7B%22price%22%3A%7B%22max%22%3A600000%7D%2C%22mp%22%3A%7B%22max%22%3A3000%7D%2C%22sort%22%3A%7B%22value%22%3A%22days%22%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22mf%22%3A%7B%22value%22%3Afalse%7D%2C%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isListVisible%22%3Atrue%7D";
 
 export default function ListingsSection() {
   return (
